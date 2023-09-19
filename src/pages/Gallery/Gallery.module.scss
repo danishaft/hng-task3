@@ -1,0 +1,12 @@
+@use "../../assets/styles/styles.scss" as g;
+.main{
+    padding: 1em;
+    width: 100%;
+}
+.gallery{
+    display: grid;
+    gap: 1em 1em;
+    // grid-auto-rows: 10em;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    grid-auto-flow: dense;
+}

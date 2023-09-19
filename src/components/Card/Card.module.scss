@@ -1,0 +1,27 @@
+@use "../../assets/styles/styles.scss" as g;
+.card{
+    display: grid;
+    place-content: center;
+}
+.card > * {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    // border: 1px solid red;
+}
+.card .img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.card figcaption{
+    background: rgba(56, 57, 62, 0.881);
+    width: fit-content;
+    height: fit-content;
+    padding: .1em .7em;
+    border-radius: .6em;
+    margin: .5em;
+    @include g.text-sm1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

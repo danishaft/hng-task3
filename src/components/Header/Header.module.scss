@@ -1,0 +1,61 @@
+@use "../../assets/styles/styles.scss" as g;
+header{
+    border: 3px solid g.$primaryGrey;
+    padding: .4em 0;
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 70em;
+    padding: 0 3%;
+    margin: 0 auto;
+}
+.logo__bg{
+    display: none;
+}
+.middle{
+    width: 65%;
+}
+.middle input{
+    border: 2px solid g.$secondaryGrey;
+    background: g.$primaryBlack;
+    border-radius: .5em;
+    padding: .3em .5em;
+    @include g.text-base;
+    width: 100%;
+}
+.profile__mb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include g.text-bg1;
+}
+
+//responsive breakpoints
+@include g.tablet{
+    .middle{
+        width: 50%;
+    }
+    .heading{
+        max-width: 70em;
+        padding: 0 7%;
+        margin: 0 auto;
+    }
+}
+
+@include g.desktop{
+    .logo__mb{
+        display: none;
+    }
+    .header{
+        max-width: 60em;
+    }
+    .logo__bg{
+        display: block;
+    }
+    .profile__bg{
+        display: flex;
+    }
+}

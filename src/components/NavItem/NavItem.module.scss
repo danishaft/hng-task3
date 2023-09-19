@@ -1,0 +1,9 @@
+@use "../../assets/styles/styles.scss" as g;
+.nav__item{
+    list-style: none;
+    display: flex;
+    gap: .6em;
+    align-items: center;
+    @include g.text-sm;
+    padding: .3em 0 .3em 1em;
+}
