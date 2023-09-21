@@ -33,6 +33,14 @@ a:nth-child(2){
     color: red;
     padding: 0 0 0 1em;
 }
+.logout{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @include g.text-sm;
+    padding: .3em 0 .3em 1em;
+    cursor: pointer;
+}
 //responsive breakpoints
 @include g.desktop{
     .aside__big {

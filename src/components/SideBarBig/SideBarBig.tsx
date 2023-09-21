@@ -6,7 +6,7 @@ import { GoHome } from "react-icons/go";
 import { TbPhoto } from "react-icons/tb";
 import { MdOutlineExplore } from "react-icons/md";
 import { HiOutlineShare } from "react-icons/hi2";
-// import { IoLogOutOutline } from "react-icons/io5";
+import { IoLogOutOutline } from "react-icons/io5";
 
 import NavItem from "../NavItem/NavItem";
 function SideBarBig() {
@@ -36,7 +36,7 @@ function SideBarBig() {
                 <NavItem icon={<GoHome/>} text='Album'/>
                 <NavItem icon={<GoHome/>} text='Archive'/>
                 <NavItem icon={<GoHome/>} text='Bin'/>
-                <p onClick={logOut}>logout</p>
+                <span className={styles.logout} onClick={logOut}><IoLogOutOutline/>Logout</span>
             </ul>
         </div>
     </aside>
