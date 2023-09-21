@@ -19,9 +19,9 @@ function Header() {
     const _contextVal = useSideBarContext();
     const [userInput , setUserInput] = useState("");
     const contextValue = useContext(Context)
-    // const onSubmit = (submittingObject: any) => {
-    //     submittingObject.resetForm()
-    // }
+    const onSubmit = () => {
+        setUserInput('')
+    }
     const handleOnChange = (val:string) => {
         setUserInput(val)
         contextValue?.setSearchState(val)
@@ -50,6 +50,7 @@ function Header() {
             <div className={styles.middle}>
                 <input  
                     onChange={(e) =>  handleOnChange(e.target.value)}
+                    onSubmit={onSubmit}
                     value={userInput}
                     className={styles.field} 
                     type="text" name='search' 
