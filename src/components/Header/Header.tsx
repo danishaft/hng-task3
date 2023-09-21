@@ -1,18 +1,45 @@
+
 import styles from "./Header.module.scss"
 import { MdAccountCircle } from "react-icons/md";
 import Hamburger from 'hamburger-react'
-import { useSideBarContext } from "../../contexts/SideBarContext";
+// import { BiSearch } from "react-icons/bi";
+import { Context, useSideBarContext } from "../../contexts/SideBarContext";
+import { useContext, useState } from "react";
+
+// type Search = {
+//     search: string;
+// };
+// const initialValues: Search = {
+//     search: ""
+// }
+// const validationSchema = Yup.object({
+//     search: Yup.string().required("required"),
+// });
 function Header() {
-    const {setOpened} = useSideBarContext()
+    const _contextVal = useSideBarContext();
+    const [userInput , setUserInput] = useState("");
+    const contextValue = useContext(Context)
+    // const onSubmit = (submittingObject: any) => {
+    //     submittingObject.resetForm()
+    // }
+    const handleOnChange = (val:string) => {
+        setUserInput(val)
+        contextValue?.setSearchState(val)
+    };
+
+    function switchVal(prev: boolean) {
+    return !prev
+    }
+
   return (
     <header>
         <div className={styles.heading}>
             <div className={styles.logo__mb}>
                 <Hamburger size={19} onToggle={toggled => {
                     if(toggled){
-                        setOpened((prev: boolean) => !prev)
+                        _contextVal!.setOpened(switchVal(false))
                     }else{
-                        setOpened((prev: boolean) => !prev)
+                        _contextVal!.setOpened(switchVal(true))
                     }
                 }}/>
             </div>
@@ -21,9 +48,30 @@ function Header() {
                 <h1>Premiere</h1>
             </div>
             <div className={styles.middle}>
-                <form>
-                    <input type='text' placeholder='Search'/>
-                </form>
+                <input  
+                    onChange={(e) =>  handleOnChange(e.target.value)}
+                    value={userInput}
+                    className={styles.field} 
+                    type="text" name='search' 
+                    placeholder="Search images by tag"
+                    /> 
+                {/* <Formik
+                    initialValues={initialValues}
+                    onSubmit={onSubmit}
+                    validationSchema={validationSchema}
+                >
+                    {(formik)=>{
+                        return(
+                            <Form onChange={handleOnChange}>
+                                <FormObserver/>
+                                <div className={styles.input}>
+                                    <Field className={styles.field} type="text" name='search' placeholder="Search images by tag"/>
+                                    <button className={styles.btn} type="submit" disabled={!formik.isValid || formik.isSubmitting}><BiSearch/></button>
+                                </div>
+                            </Form>
+                        )
+                    }}
+                </Formik> */}
             </div>
             <div className={styles.profile__mb}>
                 <MdAccountCircle/>

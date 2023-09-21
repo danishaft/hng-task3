@@ -18,14 +18,15 @@ dl,
 dd {
   margin: 0;
 }
-body{
+
+body {
   background: #181619;
-  color: #ffff;
+  color: white;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role=list],
+ol[role=list] {
   list-style: none;
 }
 
@@ -39,12 +40,13 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -65,9 +67,8 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
   *,
   *::before,
   *::after {
@@ -77,25 +78,48 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.aside__big {
+  border-right: 3px solid #1d1c1d;
+  height: 100vh;
+  width: 50%;
+  max-width: 16em;
+  display: none;
+  position: static;
+  background: #181619;
+}
 
-//colors
-$primaryGrey: #1d1c1d;
-$secondaryGrey: #656465;
-$primaryBlack: #181619;
+.aside__big nav {
+  border-bottom: 3px solid #1d1c1d;
+}
 
-//font sizes
-@mixin text-sm1{
-  font-size: clamp(.4em, 3vw, .7em);
+.aside__big nav .sidebar__menu {
+  padding: 1em 0.7em 1em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
-@mixin text-sm{
-  font-size: clamp(.8em, 4vw, 1.2em);
+
+.sidebar__menu li:nth-child(2) {
+  background: white;
+  color: #da1d27;
+  border-radius: 0 1.5em 1.5em 0;
 }
-@mixin text-base{
-    font-size: clamp(.5em, 3.5vw, 1em);
+
+.aside__big .library .sidebar__library {
+  padding: 0.4em 0.7em 0.4em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
-@mixin text-bg1{
-    font-size: clamp(1.5em, 7vw, 2.2em);
+
+.sidebar__library p:first-child {
+  font-size: clamp(0.8em, 4vw, 1.2em);
+  color: red;
+  padding: 0 0 0 1em;
 }
-@mixin text-bg{
-  font-size: clamp(1.2em, 6vw, 2.1em);
-}
+
+@media (min-width: 64em) {
+  .aside__big {
+    display: block;
+  }
+}/*# sourceMappingURL=SideBarBig.module.css.map */

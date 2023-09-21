@@ -18,11 +18,31 @@ header{
 .middle{
     width: 65%;
 }
-.middle input{
+.middle .input{
+    display: grid;
+    place-items: center;
+}
+.middle .input > *{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.middle .input .btn{
+    justify-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    background: none;
+    border: none;
+    color: g.$secondaryGrey;
+    margin-left: .3em;
+}
+.middle .field{
     border: 2px solid g.$secondaryGrey;
+    color: #ffff;
     background: g.$primaryBlack;
     border-radius: .5em;
-    padding: .3em .5em;
+    padding: .3em 2em;
     @include g.text-base;
     width: 100%;
 }

@@ -18,14 +18,15 @@ dl,
 dd {
   margin: 0;
 }
-body{
+
+body {
   background: #181619;
-  color: #ffff;
+  color: white;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role=list],
+ol[role=list] {
   list-style: none;
 }
 
@@ -39,12 +40,13 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -65,9 +67,8 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
   *,
   *::before,
   *::after {
@@ -77,25 +78,66 @@ select {
     scroll-behavior: auto !important;
   }
 }
+header {
+  border: 3px solid #1d1c1d;
+  padding: 0.4em 0;
+}
 
-//colors
-$primaryGrey: #1d1c1d;
-$secondaryGrey: #656465;
-$primaryBlack: #181619;
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 70em;
+  padding: 0 3%;
+  margin: 0 auto;
+}
 
-//font sizes
-@mixin text-sm1{
-  font-size: clamp(.4em, 3vw, .7em);
+.logo__bg {
+  display: none;
 }
-@mixin text-sm{
-  font-size: clamp(.8em, 4vw, 1.2em);
+
+.middle {
+  width: 65%;
 }
-@mixin text-base{
-    font-size: clamp(.5em, 3.5vw, 1em);
+
+.middle input {
+  border: 2px solid #656465;
+  background: #181619;
+  border-radius: 0.5em;
+  padding: 0.3em 0.5em;
+  font-size: clamp(0.5em, 3.5vw, 1em);
+  width: 100%;
 }
-@mixin text-bg1{
-    font-size: clamp(1.5em, 7vw, 2.2em);
+
+.profile__mb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.5em, 7vw, 2.2em);
 }
-@mixin text-bg{
-  font-size: clamp(1.2em, 6vw, 2.1em);
+
+@media (min-width: 48em) {
+  .middle {
+    width: 50%;
+  }
+  .heading {
+    max-width: 70em;
+    padding: 0 7%;
+    margin: 0 auto;
+  }
 }
+@media (min-width: 64em) {
+  .logo__mb {
+    display: none;
+  }
+  .header {
+    max-width: 60em;
+  }
+  .logo__bg {
+    display: block;
+  }
+  .profile__bg {
+    display: flex;
+  }
+}/*# sourceMappingURL=Header.module.css.map */

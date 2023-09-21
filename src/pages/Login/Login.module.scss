@@ -1,0 +1,45 @@
+@use "../../assets/styles/styles.scss" as g;
+.container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    // background-color: red;
+}
+.form__card{
+    background-color: #1C1D21;
+    max-width: 30em;
+    width: 20em;
+    padding: 4em 2em;
+    border-radius: 2em;
+}
+.form__card h1{
+    @include g.text-bg;
+}
+.form__card .header__text{
+    @include g.text-sm1;
+    margin-bottom: 2em;
+}
+.form__card .input{
+    margin: .5em 0;
+}
+.field{
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    color: #ffff;
+    margin: .5em 0;
+}
+.btn{
+    background: #da1d27;
+    border: none;
+    border-radius: .5em;
+    color: #ffff;
+    padding: .4em 1.1em;
+    margin-top: 1em;
+    cursor: pointer;
+}

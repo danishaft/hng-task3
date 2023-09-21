@@ -1,3 +1,4 @@
+// import { Link } from "react-router-dom";
 import NavItem from "../NavItem/NavItem"
 import styles from "./Sidebar.module.scss"
 import { GoHome } from "react-icons/go";
@@ -6,9 +7,8 @@ import { MdOutlineExplore } from "react-icons/md";
 import { HiOutlineShare } from "react-icons/hi2";
 import { useSideBarContext } from "../../contexts/SideBarContext";
 function Sidebar() {
-    const {opened} = useSideBarContext()
-    console.log(opened)
-    if(opened) {
+    const _contextVal = useSideBarContext()
+    if(_contextVal?.opened) {
         return (
             <aside className={styles.aside}>
                 <nav>

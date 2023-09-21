@@ -6,6 +6,8 @@
     max-width: 16em;
     // display: none;
     position: absolute;
+    bottom: 0;
+    top: .3em;
     background: g.$primaryBlack;
 }
 .aside nav{
@@ -30,7 +32,6 @@
 }
 .sidebar__library p:first-child{
     @include g.text-sm;
-    color: red;
     padding: 0 0 0 1em;
 }
 //responsive breakpoints

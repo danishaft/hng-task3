@@ -1,10 +1,24 @@
+import {signOut} from "firebase/auth"
+import {auth} from "../../config/firebaseConfig"
+// import { Link } from "react-router-dom";
 import styles from "./SideBarBig.module.scss"
 import { GoHome } from "react-icons/go";
 import { TbPhoto } from "react-icons/tb";
 import { MdOutlineExplore } from "react-icons/md";
 import { HiOutlineShare } from "react-icons/hi2";
+// import { IoLogOutOutline } from "react-icons/io5";
+
 import NavItem from "../NavItem/NavItem";
 function SideBarBig() {
+    const logOut = async() => {
+        try{
+            await signOut(auth)
+        }catch (err){
+            console.log("Error", err);
+        }finally {
+            console.log("logged out")
+        }
+    }
   return (
     <aside className={styles.aside__big}>
         <nav>
@@ -22,6 +36,7 @@ function SideBarBig() {
                 <NavItem icon={<GoHome/>} text='Album'/>
                 <NavItem icon={<GoHome/>} text='Archive'/>
                 <NavItem icon={<GoHome/>} text='Bin'/>
+                <p onClick={logOut}>logout</p>
             </ul>
         </div>
     </aside>
