@@ -7,7 +7,7 @@ import { SortablePhoto } from "../../components/SortableCard/SortableCard"
 import {DndContext, closestCenter, MouseSensor, TouchSensor, DragOverlay, useSensor, useSensors, DragStartEvent, UniqueIdentifier,} from '@dnd-kit/core'
 import {arrayMove, SortableContext, rectSortingStrategy,} from '@dnd-kit/sortable'
 // import { Navigate } from "react-router-dom"
-import { useAuth } from "../../contexts/AuthContext"
+// import { useAuth } from "../../contexts/AuthContext"
 import { Context,  } from "../../contexts/SideBarContext"
 
 
@@ -17,7 +17,7 @@ function Gallery() {
   const [activeId, setActiveId] = useState<UniqueIdentifier | null>(null);
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
   const activeElement = activeId ? filteredItems?.find(item => item.id === activeId!) : null
-  const _authVal = useAuth()
+  // const _authVal = useAuth()
   // const _contextVal  = useSideBarContext()
   const _contextVal  = useContext(Context)
   _contextVal?.searchState
