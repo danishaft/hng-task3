@@ -6,7 +6,7 @@ import jsonData from "../../data.json"
 import { SortablePhoto } from "../../components/SortableCard/SortableCard"
 import {DndContext, closestCenter, MouseSensor, TouchSensor, DragOverlay, useSensor, useSensors, DragStartEvent, UniqueIdentifier,} from '@dnd-kit/core'
 import {arrayMove, SortableContext, rectSortingStrategy,} from '@dnd-kit/sortable'
-import { Navigate } from "react-router-dom"
+// import { Navigate } from "react-router-dom"
 import { useAuth } from "../../contexts/AuthContext"
 import { Context,  } from "../../contexts/SideBarContext"
 
@@ -39,7 +39,7 @@ function Gallery() {
       onDragCancel={handleDragCancel}
     >
       <main className={styles.main}>
-        {!_authVal?.user && <Navigate to={"/login"} replace={true}/>}
+        {/* {!_authVal?.user && <Navigate to={"login"} replace={true}/>} */}
         <h1>This month</h1>
         <SortableContext items={items} strategy={rectSortingStrategy}>
           <div className={styles.gallery}>
