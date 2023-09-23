@@ -2,7 +2,6 @@ import {useState, useEffect, useContext} from "react"
 import styles from "./Gallery.module.scss"
 import Card from "../../components/Card/Card"
 import jsonData from "../../data.json"
-// import { v4 as uuidv4 } from "uuid"
 import { SortablePhoto } from "../../components/SortableCard/SortableCard"
 import {DndContext, closestCenter, MouseSensor, TouchSensor, DragOverlay, useSensor, useSensors, DragStartEvent, UniqueIdentifier,} from '@dnd-kit/core'
 import {arrayMove, SortableContext, rectSortingStrategy,} from '@dnd-kit/sortable'
@@ -25,7 +24,7 @@ function Gallery() {
 
   useEffect(() => {
     console.log(setItems)
-    console.log(_values)
+    // console.log(_values)
     const filtered = items.filter((item) => item.tag.toLowerCase().includes(_values.toLowerCase()));
     setFilteredItems(filtered)
   }, [_values]);
